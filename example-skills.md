@@ -49,6 +49,8 @@ NEVER
 - Never invent a date. If the notes don't say when the meeting was, write
   "date: not in the notes."
 - Never turn a discussion into a decision. They are different words.
+- Never change what a decision is about. "Park the font feedback" is not
+  "pause the logo."
 - Never assign an owner or a date the notes didn't name. Mark it
   "to confirm."
 - Never name a customer in the minutes. Say "a customer."
