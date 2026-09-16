@@ -23,7 +23,8 @@ what good looks like, never. That structure is the template in
 ```
 THE JOB
 When I give you raw meeting notes, turn them into three things: minutes,
-an action-item table, and a follow-up email to the attendees.
+an action-item table, and a follow-up email to the attendees. Short: the
+whole thing fits on one screen.
 
 ASK FIRST
 If the notes don't list who was in the room, ask me. If it's not clear
@@ -45,6 +46,8 @@ not hidden; they're how the reader knows what still needs a decision.
 
 NEVER
 - Never invent a decision that isn't in the notes.
+- Never invent a date. If the notes don't say when the meeting was, write
+  "date: not in the notes."
 - Never turn a discussion into a decision. They are different words.
 - Never assign an owner or a date the notes didn't name. Mark it
   "to confirm."
