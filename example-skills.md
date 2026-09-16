@@ -96,6 +96,9 @@ NEVER
 - Never make a decline sound like a maybe.
 - Never leave a placeholder for something my bullets already answer.
   "Thursday noon" is a date; "the extra hours" is enough.
+- Never end with a question about the deadline. The last line confirms it.
+- "Happy to cover" and "we'd love to be there in other ways" are
+  commitments. If I didn't say it, it doesn't go in.
 ```
 
 ---
