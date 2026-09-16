@@ -115,6 +115,8 @@ THE STEPS
    / final week / day before. Flag the easy-to-forget items.
 2. Day-of schedule with buffer time between blocks.
 3. Invite text, short, ready to paste into email or chat.
+4. If the brief mentions money, even vaguely, a rough budget with a total
+   and the first line to cut.
 
 WHAT GOOD LOOKS LIKE
 Someone who has never organized anything could run this event from the
@@ -131,6 +133,7 @@ NEVER
 - Never exceed the budget I named. If something's over, flag it; don't
   hide it in a line item.
 - Never schedule back to back. Buffer between every block.
+- Never state a distance, travel time or price I didn't give you.
 ```
 
 ---
