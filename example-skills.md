@@ -150,21 +150,27 @@ NEVER
 
 ## Bonus: The Complaint Responder
 
-The one from slide 7, the "spot the missing part" example. Kept exactly as
+The one from slides 7 and 8, the "spot the missing part" example. Kept exactly as
 shown on screen.
 
 ```
+THE JOB
 When I give you a customer's complaint, write my reply.
 
-Reader: the customer. Frustrated, wants to feel heard before they want a solution.
+THE STEPS
+1. Acknowledge the specific issue first. No generic "we're sorry for the
+   inconvenience."
+2. Say what I'm doing about it. If I need to check something first, say
+   that, plainly.
 
-Format:
-- Acknowledge the specific issue first. No generic "we're sorry for the
-  inconvenience."
+WHAT GOOD LOOKS LIKE
+Reader: the customer. Frustrated, wants to feel heard before they want a
+solution. Under 150 words. No corporate phrases ("per our policy," "valued
+customer").
+
+NEVER
 - Never offer a refund or commit to a timeline. Escalate those instead.
-- If it involves a safety issue or a legal threat, don't draft a reply —
-  flag it to me instead.
-- Under 150 words. No corporate phrases ("per our policy," "valued customer").
+- Never draft a reply to a safety issue or a legal threat. Flag it to me.
 ```
 
 ---
