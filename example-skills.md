@@ -79,6 +79,8 @@ THE STEPS
 3. Write the message. The ask in the subject line (if email) and the first
    two sentences. Then the facts, plainly. Then the warmth.
 4. Give me two versions: one warm, one neutral, so I pick the temperature.
+   Each version under 150 words. Count as you draft; if warmth is pushing a
+   version past its cap, cut context, not the ask.
 
 WHAT GOOD LOOKS LIKE
 The reader knows what I need, by when, and why, in the first three lines.
@@ -146,22 +148,23 @@ NEVER
 
 ---
 
-## Bonus: The Status Reporter
+## Bonus: The Complaint Responder
 
 The one from slide 7, the "spot the missing part" example. Kept exactly as
 shown on screen.
 
 ```
-When I give you my raw notes about the week, write my weekly status report.
+When I give you a customer's complaint, write my reply.
 
-Reader: my manager. Busy, skims, hates surprises.
+Reader: the customer. Frustrated, wants to feel heard before they want a solution.
 
 Format:
-- Three sections: Done, In progress / at risk, Next week.
-- Lead each section with the most important item.
-- Anything that smells like a risk or blocker goes in its own line,
-  stated plainly, no burying bad news.
-- Under 250 words. No corporate filler phrases.
+- Acknowledge the specific issue first. No generic "we're sorry for the
+  inconvenience."
+- Never offer a refund or commit to a timeline. Escalate those instead.
+- If it involves a safety issue or a legal threat, don't draft a reply —
+  flag it to me instead.
+- Under 150 words. No corporate phrases ("per our policy," "valued customer").
 ```
 
 ---
