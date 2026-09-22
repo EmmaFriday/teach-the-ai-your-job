@@ -48,6 +48,8 @@ The file that generated this handout is one.)
 
 - **Starter kit** (skill template + three example skills + this handout):
   https://emmafriday.github.io/teach-the-ai-your-job/
+- **Questions after today, or want to show me what you built?** Find me on
+  LinkedIn: https://www.linkedin.com/in/marieanik/
 - **Agent Skills open standard** (Anthropic, December 2025): how skill files work,
   in any tool that supports them.
 - **The test:** if a smart new hire could follow your skill, so can the AI. If

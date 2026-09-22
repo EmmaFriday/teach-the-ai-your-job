@@ -1,31 +1,41 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Teach the AI Your Job: Starter Kit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-  :root { --ink:#1a1a1a; --paper:#fdfcf8; --accent:#b4552d; --soft:#6b6b60; --card:#f4f1e8; --line:#e0dccf; }
-  @media (prefers-color-scheme: dark) {
-    :root { --ink:#ececec; --paper:#191917; --accent:#ff9868; --soft:#a3a396; --card:#232320; --line:#3a3a34; }
-  }
-  :root[data-theme="dark"] { --ink:#ececec; --paper:#191917; --accent:#ff9868; --soft:#a3a396; --card:#232320; --line:#3a3a34; }
-  :root[data-theme="light"] { --ink:#1a1a1a; --paper:#fdfcf8; --accent:#b4552d; --soft:#6b6b60; --card:#f4f1e8; --line:#e0dccf; }
-  body { font-family: Georgia, 'Times New Roman', serif; background:var(--paper); color:var(--ink);
-         max-width:680px; margin:0 auto; padding:2.5rem 1.25rem 4rem; line-height:1.65; }
-  h1 { font-size:2rem; line-height:1.15; margin:0 0 .4rem; }
-  h2 { font-size:1.25rem; margin:2.4rem 0 .6rem; color:var(--accent); }
-  .tagline { color:var(--soft); font-style:italic; margin:0 0 2rem; }
+  /* Palette and fonts from brand/BRAND.md (2026-09-22). White backgrounds only:
+     the brand defines no dark palette, so none is invented here. */
+  :root { color-scheme: light;
+          --ink:#2C373C; --paper:#FFFFFF; --accent:#E01E5A; --bar:#ECB22E;
+          --soft:#55636B; --card:#ECEDEF; --line:#ECEDEF; }
+  body { font-family: Poppins, system-ui, sans-serif; background:var(--paper); color:var(--ink);
+         max-width:720px; margin:0 auto; padding:2.5rem 1rem 4rem; line-height:1.7; font-size:1rem; }
+  h1, h2, h3, h4 { font-weight:700; line-height:1.2; }
+  h1 { font-size:2.25rem; color:var(--accent); margin:0 0 .8rem;
+       border-left:6px solid var(--bar); padding-left:.9rem; }
+  h2 { font-size:1.4rem; margin:2.4rem 0 .6rem; color:var(--accent); }
+  h3 { font-size:1.1rem; color:var(--ink); }
+  strong, b { font-weight:600; }
+  a { color:var(--accent); text-decoration:underline; text-underline-offset:2px; overflow-wrap:anywhere; }
+  a:focus-visible { outline:3px solid var(--ink); outline-offset:2px; border-radius:2px; }
+  .tagline { color:var(--soft); margin:0 0 2rem; }
   .steps { counter-reset: step; padding:0; margin:0; list-style:none; }
   .steps li { counter-increment: step; margin:0 0 1.1rem; padding-left:2.6rem; position:relative; }
   .steps li::before { content: counter(step); position:absolute; left:0; top:.1rem;
-    width:1.7rem; height:1.7rem; border-radius:50%; background:var(--accent); color:var(--paper);
-    display:flex; align-items:center; justify-content:center; font-family:system-ui,sans-serif; font-weight:700; font-size:.95rem; }
+    width:1.7rem; height:1.7rem; border-radius:50%; background:var(--ink); color:var(--paper);
+    display:flex; align-items:center; justify-content:center; font-weight:700; font-size:.95rem; }
   .steps b { display:block; }
-  pre { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:1.1rem 1.2rem;
-        font-family:ui-monospace, Menlo, monospace; font-size:.85rem; line-height:1.55;
+  pre { background:var(--card); border-radius:8px; padding:1.1rem 1.2rem;
+        font-family:'JetBrains Mono', ui-monospace, Menlo, monospace; font-size:.85rem; line-height:1.6;
         white-space:pre-wrap; overflow-x:auto; }
-  .rule { background:var(--card); border-left:4px solid var(--accent); border-radius:0 8px 8px 0;
+  code { font-family:'JetBrains Mono', ui-monospace, Menlo, monospace; font-size:.9em; }
+  :not(pre) > code { background:var(--card); border-radius:4px; padding:.1em .35em; }
+  hr { border:0; border-top:2px solid var(--line); margin:2rem 0; }
+  .rule { background:var(--card); border-left:6px solid var(--bar); border-radius:0 8px 8px 0;
           padding:.75rem 1rem; margin:.75rem 0; }
-  .rule b { font-family:system-ui,sans-serif; font-size:.95rem; }
-  footer { margin-top:3rem; color:var(--soft); font-size:.9rem; border-top:1px solid var(--line); padding-top:1.2rem; }
+  footer { margin-top:3rem; color:var(--soft); font-size:.9rem; border-top:2px solid var(--line); padding-top:1.2rem; }
 </style>
 
 <style>nav{color:var(--soft);font-size:.95rem;margin:0 0 2rem} nav a{color:var(--accent)} section h2{margin-top:2.8rem} h3{font-size:1.05rem;margin:1.6rem 0 .4rem}</style>
@@ -322,12 +332,14 @@ The file that generated this handout is one.)</p>
 <h3>Where to learn more</h3>
 <ul>
 <li><strong>Starter kit</strong> (skill template + three example skills + this handout):
-  https://emmafriday.github.io/teach-the-ai-your-job/</li>
+  <a href="https://emmafriday.github.io/teach-the-ai-your-job/">https://emmafriday.github.io/teach-the-ai-your-job/</a></li>
+<li><strong>Questions after today, or want to show me what you built?</strong> Find me on
+  LinkedIn: <a href="https://www.linkedin.com/in/marieanik/">https://www.linkedin.com/in/marieanik/</a></li>
 <li><strong>Agent Skills open standard</strong> (Anthropic, December 2025): how skill files work,
   in any tool that supports them.</li>
 <li><strong>The test:</strong> if a smart new hire could follow your skill, so can the AI. If
   they couldn't, the skill (not the hire) needs another sentence.</li>
 </ul>
 </section>
-<footer>From "Teach the AI Your Job", Victoria Tech Week, September 2026. Rule of thumb: explained a task to a human more than twice? It's worth a skill. Page rebuilt 2026-09-21.</footer>
+<footer>From "Teach the AI Your Job", Victoria Tech Week, September 2026. Rule of thumb: explained a task to a human more than twice? It's worth a skill. Page rebuilt 2026-09-22.</footer>
 </body></html>
