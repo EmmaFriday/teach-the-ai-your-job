@@ -43,7 +43,7 @@
 <h1>Teach the AI Your Job</h1>
 <p class="tagline">The starter kit from Marie Anik Paradis's session at Victoria Tech Week. Everything from the talk, ready for your Monday.</p>
 <p><strong>The whole idea in two sentences:</strong> a "skill" is a set of instructions you write once, in plain language, that teaches an AI to do one of your recurring tasks your way. If you can explain a task to a new colleague, you can write one, and it takes no code.</p>
-<nav><a href="#template">The five parts</a> · <a href="#recipe">The Monday recipe</a> · <a href="#skills">The skills from the session</a> · <a href="#handout">The handout</a></nav>
+<nav><a href="#template">The five parts</a> · <a href="#recipe">The Monday recipe</a> · <a href="#skills">The skills from the session</a> · <a href="#live">Written live</a> · <a href="#handout">The handout (the one made live during the session)</a></nav>
 <section id="template"><h2>The five parts: your first skill, fill in the blanks</h2>
 <p>A "skill" is a set of instructions you write once, in plain language, that
 teaches an AI to do one of your recurring tasks <em>your way</em>. No code. If you
@@ -198,7 +198,7 @@ THE STEPS
    two sentences. Then the facts, plainly. Then the warmth.
 4. Give me two versions: one warm, one neutral, so I pick the temperature.
    Each version under 150 words. Count as you draft; if warmth is pushing a
-   version past its cap, cut context, not the ask.
+   version past its cap, cut context, not the ask, and never drop a point.
 
 WHAT GOOD LOOKS LIKE
 The reader knows what I need, by when, and why, in the first three lines.
@@ -257,7 +257,7 @@ NEVER
 - Never schedule back to back. Buffer between every block.
 - Never state a distance, travel time or price I didn't give you. A rough
   budget range with a total is not an invented price; give me one.
-- The invite says the venue is accessible, never who needs it.
+- The invite says the venue will be step-free, never who needs it.
 </code></pre>
 <hr />
 <h3>Bonus: The Complaint Responder</h3>
@@ -287,59 +287,124 @@ any other. Those guardrails are what make the output trustworthy, and they
 are the first thing to add to any skill of your own. Most first drafts are
 thin there. Yours will be too. That's what the fix-the-skill loop is for.</em></p>
 </section>
-<section id="handout"><h2>The handout</h2>
-<p><em>From Marie's session at [CONFERENCE NAME]. This page was generated live during the
-talk by the same plain-English playbook that produced the slides. It stands alone:
-if you missed the session, everything you need is below.</em></p>
-<h3>The idea in two sentences</h3>
-<p>Instead of asking an AI to do a task and fixing its output every time, write down
-(once, in plain English) how the job should be done, the way you would brief a new
-hire, and let the AI follow those instructions every time. This is called a "skill," it
-requires zero code, and since December 2025 it's an open standard (Anthropic); the
-same approach works in Claude, ChatGPT, Copilot, or whatever AI your company uses.
-(When a skill grows into a whole workflow with many outputs, I call it a playbook.
-The file that generated this handout is one.)</p>
-<h3>Why bother (the numbers)</h3>
+<section id="live"><h2>Written live: the skill we built together</h2>
+<p>Written live on stage, in front of the room, and published exactly as it came out: no edits, typos included. Compare it with the finished versions above.</p>
+<h3>event-planner <a href="live/event-planner.md" download>(download)</a></h3>
+<pre><code>---
+name: event-planner
+description: Turns a description of an event into a planning checklist grouped by how far out the event is, a realistic day-of schedule with buffer time, and short invite text. Use this whenever the user wants to plan, organize, or prep for an event, gathering, party, offsite, workshop, or similar occasion — even if they just describe the event loosely and don&#x27;t ask for a &quot;plan&quot; by name. Always asks a few clarifying questions before producing output; make sure to trigger on requests like &quot;help me plan a...&quot;, &quot;I&#x27;m throwing a...&quot;, &quot;we&#x27;re organizing a...&quot;, or &quot;what do I need to do before [event]&quot;.
+---
+
+# The job
+
+Turn a rough description of an event into three concrete deliverables:
+
+1. A checklist grouped by how far out each task is from the event (e.g. weeks before, days before, day-of).
+2. A realistic day-of schedule that includes buffer time, not just a stack of back-to-back items.
+3. Short invite text the user can send as-is or lightly edit.
+4. A printable version of the checklist with a blank column beside each item for a name or sign-up, so it can be posted somewhere people pass by (a lunch room, a shared board) and volunteer themselves for tasks.
+
+The point is to save the user from having to reconstruct the standard shape of event planning from scratch, and to catch the timing mistakes people make under stress: forgetting buffer time, front-loading day-of tasks, or sending invites too late for people to plan around.
+
+# Ask first
+
+Before producing anything, ask two or three clarifying questions — no more. Pick the questions that would most change the shape of the plan, not a generic intake form. Think about what&#x27;s actually still unknown and consequential:
+
+- If the user didn&#x27;t give a date (or a &quot;how far out&quot; timeframe), always ask for it — nothing else can be grouped by time-out without it.
+- If the user didn&#x27;t give an actual budget number (a vague word like &quot;modest&quot; or &quot;not a big spend&quot; doesn&#x27;t count), always ask for it — &quot;what&#x27;s the budget, roughly?&quot; A real number is what turns the checklist and schedule into something with usable figures instead of vague spending vibes.
+- Beyond date and budget, choose one more from whatever is genuinely unresolved and high-impact: rough guest count, venue/location (booked or still to find), who&#x27;s paying, or whether any part of the event has a hard external dependency (a caterer, a permit, a speaker, a venue&#x27;s own deadline).
+
+Ask them together in one turn, briefly. Don&#x27;t ask about things you can reasonably infer from context (e.g. don&#x27;t ask &quot;is this indoors or outdoors&quot; for a described office meeting). If the user&#x27;s initial description already answers a question, don&#x27;t ask it again.
+
+# The steps
+
+1. Read the event description and the answers to your clarifying questions. Note the event date (or best estimate) and today&#x27;s date, since the checklist is grouped relative to that gap.
+2. Build the checklist. Group tasks under time-out headers appropriate to the actual runway (a two-day offsite planned a month out needs different groupings than a wedding planned a year out — don&#x27;t force a fixed template onto every event). Each item should be a concrete action, not a vague category. Where the budget bears on a task (booking a venue, ordering catering, picking an activity), work the actual number into the item so it&#x27;s a decision the user can act on, not just a reminder that money is involved.
+3. Build the day-of schedule. Anchor it to real start/end times. Add buffer before transitions, before the event opens to guests/attendees, and between any back-to-back segments — buffer is not optional padding, it&#x27;s what keeps the day from cascading into delay when one thing runs long.
+4. Write the invite text. Keep it between 150 and 200 words: what, when, where, and what&#x27;s needed from the recipient (RSVP, what to bring, dress code) if relevant. Match tone to the event — a team standup off-site and a milestone birthday party read differently.
+5. Build the printable sign-up version of the checklist: same items and time-out groupings as the main checklist, but formatted as a simple table with a blank &quot;Name&quot; or &quot;I&#x27;ve got this&quot; column beside each item, plain enough to photocopy or post on a wall. Skip anything that isn&#x27;t a task someone else could realistically take on (e.g. a decision only the user can make).
+6. Present all four clearly labeled and separated so the user can copy each piece independently.
+
+# What good looks like
+
+- The checklist&#x27;s time groupings actually match the runway available; nothing is crammed into &quot;day before&quot; that obviously needed a week of lead time (booking, ordering, confirming).
+- The day-of schedule has visible buffer, and buffer scales with the number of transitions and the event&#x27;s tolerance for running long (a wedding needs more slack than a lunch).
+- The invite text lands between 150 and 200 words and still contains every piece of information a recipient needs to show up correctly.
+- The printable sign-up checklist is something a stranger could glance at, understand, and claim a task from without needing the rest of the plan for context.
+
+# Never
+
+- Never skip the clarifying questions and jump straight to a plan, even if the description seems detailed enough.
+- Never ask more than three questions, and never ask something the user already told you.
+- Never produce a day-of schedule with zero buffer time between segments.
+- Never invent specific external facts the user didn&#x27;t provide (a real venue&#x27;s hours, a real vendor&#x27;s price) — flag them as things to confirm instead of guessing.
+- Never describe something as done, booked, or in place if it isn&#x27;t yet. If the venue is accessible but not booked, say it needs to be booked — don&#x27;t fold its eventual properties into the plan as settled facts.
+</code></pre>
+</section>
+<section id="handout"><h2>The handout (the one made live during the session)</h2>
+<p><em>Handout from Marie's session at Victoria Tech Week. You can use everything on
+this page whether or not you were in the room.</em></p>
+<h3>The idea, in two sentences</h3>
+<p>Most of us ask AI to do a task, then spend real time cleaning up what it
+hands back. Write down, once, in plain English, how you actually do that
+task (the way you'd brief a new hire) and hand the AI that file instead of a
+one-off prompt: that's called a skill, and it runs the same way every time.</p>
+<h3>Why bother</h3>
 <ul>
-<li>AI usage at work rose <strong>13%</strong> in 2025, while workers' confidence in using the technology <strong>fell 18%</strong>
-  (ManpowerGroup Global Talent Barometer, ~14,000 workers; reported by Fortune,
-  Jan 2026).</li>
-<li>For every <strong>ten hours</strong> AI saves someone at work, nearly <strong>four</strong> go back into
-  correcting, clarifying or rewriting what it made (Workday, <em>Beyond Productivity</em>,
-  Jan 2026, 3,200 employees who use AI at work).</li>
-<li>A skill is how you stop paying that tax: stop re-explaining your job to the AI
-  every morning.</li>
+<li>Regular AI use at work rose 13% in 2025, to 45% of workers. (ManpowerGroup
+  Global Talent Barometer 2026, about fourteen thousand workers in 19
+  countries, published January 2026.)</li>
+<li>Confidence in using technology fell 18% the same year, the first drop in
+  three years. That's workers' confidence in their own ability with
+  technology, not trust in AI.</li>
+<li>For every ten hours AI saves someone at work, nearly four go back into
+  correcting, clarifying or rewriting what it made. (Workday, "Beyond
+  Productivity: Measuring the Real Value of AI," 14 January 2026, 3,200
+  full-time employees who use AI at work.)</li>
 </ul>
-<h3>Start this week: the recipe</h3>
+<p>A skill is how you stop paying that second number. You explain the job
+once, not every morning.</p>
+<h3>Build your first skill this week</h3>
 <ol>
-<li><strong>Pick your most-repeated task.</strong> Not the hardest one, the one you'll do again
-   next week (status update, meeting minutes, the same-five-questions email).</li>
-<li><strong>Write the skill.</strong> (Or dictate it: tell your AI what the skill
-   should do and must never do, have it draft the skill, then edit.
-   The guardrails still come from you.) One page, plain English, five sections:
-   - <em>The job:</em> what this skill does, in one sentence.
-   - <em>Ask first:</em> what the AI must know before starting (audience, deadline, inputs).
+<li><strong>Pick your most-repeated task.</strong> Not the hardest one you own, the one
+   you'll do again next week: the status update, the meeting notes, the
+   same-five-questions email.</li>
+<li><strong>Write it down, plain English, one page, five parts:</strong>
+   - <em>The job:</em> one sentence, what this skill is for.
+   - <em>Ask first:</em> what the AI needs before it starts (audience, deadline,
+     inputs).
    - <em>The steps:</em> how you actually do the task, in order.
-   - <em>What good looks like:</em> tone, length, format, an example if you have one.
-   - <em>Never:</em> the mistakes and no-go zones (things to never claim, send, or invent).</li>
-<li><strong>Run it on something real.</strong> Yesterday's meeting, last week's numbers, not a
-   made-up example.</li>
-<li><strong>Fix the skill, not the output.</strong> When something's wrong, don't edit the
-   result, add the missing rule to the skill. That correction is now permanent.</li>
-<li><strong>Repeat until you trust it.</strong> Two or three rounds is normal. Mediocre first
-   output means the skill is missing a sentence, not that AI "doesn't work."</li>
+   - <em>What good looks like:</em> tone, length, format, an example if you have
+     one.
+   - <em>Never:</em> the mistakes and no-go zones, things it must not claim, send,
+     or invent.</li>
+<li><strong>Run it on something real.</strong> Yesterday's meeting, last week's numbers.
+   Not a made-up example.</li>
+<li><strong>When it gets something wrong, fix the skill, not that one output.</strong>
+   Add the missing sentence to the file. The fix is now permanent, and it
+   applies the next time too.</li>
+<li><strong>Repeat until you trust it.</strong> Two or three rounds is normal. A weak
+   first draft means the skill is missing a sentence, not that AI doesn't
+   work for this.</li>
 </ol>
+<p>A simple test: if a smart new hire could follow your written instructions,
+the AI can too. If they'd get stuck, that's the sentence your skill is
+missing, not a reason to give up.</p>
+<h3>One format, any AI</h3>
+<p>A skill is a plain-English file, not code. Since December 2025 it's an open
+standard, so the same approach works in Claude, ChatGPT, Copilot, or
+whatever your company already uses. You're learning to teach an AI, not to
+operate one particular product.</p>
 <h3>Where to learn more</h3>
 <ul>
-<li><strong>Starter kit</strong> (skill template + three example skills + this handout):
+<li><strong>Starter kit</strong> (template plus example skills):
   <a href="https://emmafriday.github.io/teach-the-ai-your-job/">https://emmafriday.github.io/teach-the-ai-your-job/</a></li>
-<li><strong>Questions after today, or want to show me what you built?</strong> Find me on
-  LinkedIn: <a href="https://www.linkedin.com/in/marieanik/">https://www.linkedin.com/in/marieanik/</a></li>
-<li><strong>Agent Skills open standard</strong> (Anthropic, December 2025): how skill files work,
-  in any tool that supports them.</li>
-<li><strong>The test:</strong> if a smart new hire could follow your skill, so can the AI. If
-  they couldn't, the skill (not the hire) needs another sentence.</li>
+<li><strong>Questions, or want to show me what you built?</strong> Find me on LinkedIn:
+  <a href="https://www.linkedin.com/in/marieanik/">https://www.linkedin.com/in/marieanik/</a></li>
+<li><strong>Agent Skills</strong>, the open standard behind this (Anthropic, December
+  2025): search "agent skills open standard" for the spec, works in any
+  tool that supports it.</li>
 </ul>
 </section>
-<footer>From "Teach the AI Your Job", Victoria Tech Week, September 2026. Rule of thumb: explained a task to a human more than twice? It's worth a skill. Page rebuilt 2026-09-22.</footer>
+<footer>From "Teach the AI Your Job", Victoria Tech Week, September 2026. Rule of thumb: explained a task to a human more than twice? It's worth a skill. Page rebuilt 2026-09-25.</footer>
 </body></html>

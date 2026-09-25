@@ -80,7 +80,7 @@ THE STEPS
    two sentences. Then the facts, plainly. Then the warmth.
 4. Give me two versions: one warm, one neutral, so I pick the temperature.
    Each version under 150 words. Count as you draft; if warmth is pushing a
-   version past its cap, cut context, not the ask.
+   version past its cap, cut context, not the ask, and never drop a point.
 
 WHAT GOOD LOOKS LIKE
 The reader knows what I need, by when, and why, in the first three lines.
@@ -143,7 +143,7 @@ NEVER
 - Never schedule back to back. Buffer between every block.
 - Never state a distance, travel time or price I didn't give you. A rough
   budget range with a total is not an invented price; give me one.
-- The invite says the venue is accessible, never who needs it.
+- The invite says the venue will be step-free, never who needs it.
 ```
 
 ---
